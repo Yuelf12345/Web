@@ -1,0 +1,42 @@
+{
+  "name": "web-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode dev --open",
+    "pre": "vite --mode pre --open",
+    "build": "vite build",
+    "build:dev": "vite build --mode dev",
+    "build:pre": "vite build --mode pre",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.5.12",
+    "@vue/runtime-dom": "^3.5.17",
+    "@vueup/vue-quill": "^1.2.0",
+    "axios": "^1.6.8",
+    "echarts": "^5.5.1",
+    "element-plus": "^2.6.3",
+    "lodash": "^4.17.21",
+    "lottie-web": "^5.12.2",
+    "normalize.css": "^8.0.1",
+    "pdf-lib": "^1.17.1",
+    "pinia": "^2.1.7",
+    "quill": "^1.3.7",
+    "quill-image-uploader": "^1.3.0",
+    "sass": "^1.74.1",
+    "three": "^0.168.0",
+    "vue": "^3.5.0",
+    "vue-router": "^4.3.0",
+    "vue3-quill": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.5",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0",
+    "vue-tsc": "^2.0.6"
+  }
+}
