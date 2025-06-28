@@ -5,16 +5,16 @@ import {
   RouterView,
   RouteRecordRaw,
 } from "vue-router";
-import { defineComponent, h } from 'vue';
+import { defineComponent, h } from "vue";
 
 const Layout = () => import("@/layout/index.vue");
 
 // Define RouterViewWrapper component first
 const RouterViewWrapper = defineComponent({
-  name: 'RouterViewWrapper',
+  name: "RouterViewWrapper",
   setup() {
     return () => h(RouterView);
-  }
+  },
 });
 
 export const constantRoutes: Array<RouteRecordRaw> = [
@@ -33,6 +33,11 @@ export const constantRoutes: Array<RouteRecordRaw> = [
         path: "/home",
         name: "Home",
         component: () => import("@/views/homepage.vue"),
+      },
+      {
+        path: "/watch",
+        name: "Watch",
+        component: () => import("@/views/watch.vue"),
       },
       {
         path: "/capture",
@@ -108,40 +113,52 @@ export const constantRoutes: Array<RouteRecordRaw> = [
             path: "login",
             name: "login",
             component: () => import("@/views/permission/login.vue"),
-            meta: { 
-              permission: ["*"]
-             },
+            meta: {
+              permission: ["*"],
+            },
           },
           {
             path: "user",
             name: "user",
             component: () => import("@/views/permission/user.vue"),
-            meta: { 
-              permission: ["user","admin"]
-             },
+            meta: {
+              permission: ["user", "admin"],
+            },
           },
           {
             path: "admin",
             name: "admin",
             component: () => import("@/views/permission/admin.vue"),
-            meta: { 
-              permission: ["admin"]
-             },
+            meta: {
+              permission: ["admin"],
+            },
           },
         ],
       },
       {
-        path:"/jsx",
-        name:"jsx",
-         component: RouterViewWrapper,
-         children:[
+        path: "/jsx",
+        name: "jsx",
+        component: RouterViewWrapper,
+        children: [
           {
             path: "jsx",
             name: "jsx",
             component: () => import("@/views/Jsx/index.tsx"),
-          }
-        ]
-      }
+          },
+        ],
+      },
+      {
+        path: "/minix",
+        name: "minix",
+        component: RouterViewWrapper,
+        children: [
+          {
+            path: "minix",
+            name: "minix",
+            component: () => import("@/views/minix/index.vue"),
+          },
+        ],
+      },
     ],
   },
 ];
