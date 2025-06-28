@@ -37,7 +37,7 @@ export const constantRoutes: Array<RouteRecordRaw> = [
       {
         path: "/watch",
         name: "Watch",
-        component: () => import("@/views/watch.vue"),
+        component: () => import("@/views/watch/index.vue"),
       },
       {
         path: "/capture",
