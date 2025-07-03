@@ -105,6 +105,11 @@ export const constantRoutes: Array<RouteRecordRaw> = [
         component: () => import("@/views/ParentComponent.vue"),
       },
       {
+        path: "/barCode",
+        name: "barCode",
+        component: () => import("@/views/barCode.vue"),
+      },
+      {
         path: "/Permission",
         name: "Permission",
         component: RouterViewWrapper,
