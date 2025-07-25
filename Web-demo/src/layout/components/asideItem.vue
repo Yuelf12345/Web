@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-sub-menu :index="resolvePath(route.path)" v-if="route.children">
+        <el-sub-menu :index="route.path" v-if="route.children">
             <template #title>
                 <el-icon>
                     <component :is="route.meta?.title ||'location'" />
@@ -11,7 +11,7 @@
                 <AsideItem :route="child" :base-path="route.path" />
             </template>
         </el-sub-menu>
-        <el-menu-item :index="resolvePath(route.path)" v-else>
+        <el-menu-item :index="route.path" v-else>
             <template #title>
                 <el-icon>
                     <component :is="route.meta?.title ||'location'" />
