@@ -19,16 +19,16 @@ const RouterViewWrapper = defineComponent({
 
 export const constantRoutes: Array<RouteRecordRaw> = [
   {
-    path: "/test",
-    name: "Test",
-    component: () => import("@/views/test.vue"),
-  },
-  {
     path: "/",
     name: "index",
     redirect: "/home",
     component: Layout,
     children: [
+      {
+        path: "/test",
+        name: "Test",
+        component: () => import("@/views/test.vue"),
+      },
       {
         path: "/home",
         name: "Home",
@@ -115,7 +115,7 @@ export const constantRoutes: Array<RouteRecordRaw> = [
         component: RouterViewWrapper,
         children: [
           {
-            path: "login",
+            path: "/Permission/login",
             name: "login",
             component: () => import("@/views/permission/login.vue"),
             meta: {
@@ -123,7 +123,7 @@ export const constantRoutes: Array<RouteRecordRaw> = [
             },
           },
           {
-            path: "user",
+            path: "/Permission/user",
             name: "user",
             component: () => import("@/views/permission/user.vue"),
             meta: {
@@ -146,7 +146,7 @@ export const constantRoutes: Array<RouteRecordRaw> = [
         component: RouterViewWrapper,
         children: [
           {
-            path: "jsx",
+            path: "/jsx/jsx",
             name: "jsx",
             component: () => import("@/views/Jsx/index.tsx"),
           },
@@ -158,9 +158,31 @@ export const constantRoutes: Array<RouteRecordRaw> = [
         component: RouterViewWrapper,
         children: [
           {
-            path: "minix",
+            path: "/minix/minix",
             name: "minix",
             component: () => import("@/views/minix/index.vue"),
+          },
+        ],
+      },
+      {
+        path: "/routerPage",
+        name: "routerPage",
+        component: RouterViewWrapper,
+        children: [
+          {
+            path: "/routerPage/routerPage",
+            name: "routerPage",
+            component: () => import("@/views/routerPage/index.vue"),
+          },
+          {
+            path: "/routerPage/routerPage1:name",
+            name: "page1",
+            component: () => import("@/views/routerPage/page1.vue"),
+          },
+          {
+            path: "/routerPage/routerPage2",
+            name: "page2",
+            component: () => import("@/views/routerPage/page2.vue"),
           },
         ],
       },
